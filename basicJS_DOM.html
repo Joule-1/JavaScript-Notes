@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul class="language">
+        <li class="1">JS</li>
+        <li class="2">Py</li>
+        
+    </ul>
+</body>
+<script>
+    // const div = document.createElement("div")
+    // div.innerText = "Text"
+    // //better
+    // const addText = document.createTextNode("Hey")
+    // div.appendChild(addText)
+    // document.body.appendChild(div);
+    // console.log(div);
+    function addLang(langname){
+        const li = document.createElement('li')
+        li.setAttribute('class','3')
+        li.appendChild(document.createTextNode(langname))
+        document.querySelector('.language').appendChild(li);
+    }
+
+    addLang('Python')
+
+
+    const sec = document.querySelector("li:nth-child(3)")
+    const newl = document.createElement('li')
+    newl.textContent = "Mojo"
+    document.querySelector('.language').appendChild(newl);
+    // sec.replaceWith(newl);
+
+    const firstlan = document.querySelector("li:first-child")
+    firstlan.outerHTML = "<li>Mast</li>"
+
+    document.querySelector('li:first-child').remove();
+</script>
+</html>
+
+<!-- document.createTextNode("Hey"): This line creates a new text node with the content "Hey". Using createTextNode is a good practice because it automatically escapes any HTML characters, which can prevent potential cross-site scripting (XSS) attacks. -->
