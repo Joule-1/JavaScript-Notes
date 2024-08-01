@@ -1,0 +1,19 @@
+appendChild:
+It can only append one node at a time.
+It only accepts a Node object.
+If the node is already part of the DOM, appendChild will remove it first before appending it to the new location.
+It's a method that's been around for a long time and is supported in all browsers, including Internet Explorer.
+eg:
+    let textNode = document.createTextNode('Hello');
+    let div = document.createElement('div');
+    div.appendChild(textNode); // Appends the text node to the div
+
+
+append:
+It can append multiple nodes and strings in a single call.
+It accepts Node objects and also strings. If a string is passed, append will create a Text node and insert it.
+Like appendChild, if a node is already part of the DOM, append will remove it first before appending it to the new location.
+It's a newer method and is not supported in Internet Explorer.
+eg:
+    let div = document.createElement('div');
+    div.append('Hello', ' ', 'World'); // Appends three nodes (two text nodes and a space) to the div
