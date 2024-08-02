@@ -1,0 +1,6 @@
+Shallow Copy:
+              A shallow copy creates a new object and copies over the values of the original object. However, if the property value is an object itself (like an array or another object), 
+              the reference to that object is copied over, not the actual object. So, changes in the original object will affect the copied object and vice versa if the change is made to these referenced properties.
+
+Deep Copy:
+            A deep copy creates a new object and recursively adds the copies of nested objects present in the original. A deep copy will duplicate everything. There is no reference to the original object.
