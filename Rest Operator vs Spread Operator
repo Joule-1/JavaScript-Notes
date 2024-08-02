@@ -1,0 +1,28 @@
+Rest Operator: 
+                The rest operator is used in function parameter lists and destructuring assignments to create an array of the remaining elements.
+                                    // Rest operator in function parameters
+                                    function sum(...nums) {
+                                      return nums.reduce((total, num) => total + num, 0);
+                                    }
+                                    console.log(sum(1, 2, 3, 4));  // logs: 10
+                                    
+                                    // Rest operator in destructuring
+                                    let [first, ...rest] = [1, 2, 3, 4];
+                                    console.log(first);  // logs: 1
+                                    console.log(rest);   // logs: [2, 3, 4]
+
+
+Spread Operator: The spread operator is used to expand an iterable (like an array or an object) into its elements.
+                                    
+                                    // Spread operator with arrays
+                                    let arr1 = [1, 2, 3];
+                                    let arr2 = [...arr1, 4, 5];
+                                    console.log(arr2);  // logs: [1, 2, 3, 4, 5]
+                                    
+                                    // Spread operator with objects
+                                    let obj1 = { a: 1, b: 2 };
+                                    let obj2 = { ...obj1, c: 3 };
+                                    console.log(obj2);  // logs: { a: 1, b: 2, c: 3 }
+
+
+In summary, the rest operator is used to gather elements together into an array, while the spread operator is used to spread elements out from an array or object.
