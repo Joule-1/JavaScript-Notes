@@ -1,4 +1,4 @@
-in a method (a function that is a property of an object), this refers to the object
+In a method (a function that is a property of an object), this refers to the object
               let obj = {
                 name: 'Alice',
                 greet: function() {
