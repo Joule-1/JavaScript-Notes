@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+
+<script>
+    // Lexical Scoping
+    // function init(){
+    //     let name = "Mozilla";
+    //     // name is local variable created by init
+
+    //     function displayName(){
+    //         // displayName() is the inner function, that forms the closure
+    //         console.log(name)
+    //         // use variable declared in the parent function
+    //     }
+    //     displayName();
+    // }
+    // init();
+
+    // function outer(){
+    //     let username = "hitesh"
+    //     function inner(){
+    //         let secret = "my123"
+    //         console.log(username)
+    //     }
+    //     function innerTwo(){
+    //         console.log("innerTwo", username)
+    //         console.log(secret)
+    //     }
+    //     inner()
+    // }
+    // outer()
+    // console.log("TOO Outer", username)
+    // console.log(username)   
+    
+    
+    // Closure
+    // Closure in JavaScript is a form of lexical scoping used to preserve variables from the outer scope of a function in the inner scope of a function.
+    // function makeFunc(){
+    //     const name = "Mozilla";
+    //     function displayName(){
+    //         console.log(name)
+    //     }
+    //     return displayName      // reference of function is returned
+    // }
+    // // scope is removed from execution context
+    // const myFunc = makeFunc();  // not only displayName but if the outer function of it exists its scope/ lexical scoping is also returned (whole memory is shared not only execution context of function) due to lexical scoping
+    // myFunc();
+</script>
+<script>
+    // Lexical scoping is the process used to define the scope of a variable by its position in the source code
+    // document.getElementById("orange").onclick = function(){
+    //     document.body.style.backgroundColor = "orange"
+    // }
+    // document.getElementById("green").onclick = function(){
+    //     document.body.style.backgroundColor = "green"
+    // }
+        // if there would be 100 button and colors || DRY
+
+        // function clickHandler(color){
+        //     document.body.style.backgroundColor = `${color}`
+        // }
+
+        // document.getElementById('orange').onclick = clickHandler("orange") // executed without click
+
+        function clickHandler(color){
+            return function(){
+                document.body.style.backgroundColor = `${color}`
+            }
+        }
+        document.getElementById("orange").onclick = clickHandler("orange")
+        document.getElementById("green").onclick = clickHandler("green")
+</script>
+</html>
