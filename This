@@ -1,0 +1,24 @@
+in a method (a function that is a property of an object), this refers to the object
+              let obj = {
+                name: 'Alice',
+                greet: function() {
+                  console.log('Hello, ' + this.name);
+                }
+              };
+              obj.greet();  // logs "Hello, Alice"
+
+In a regular function (not a method or an arrow function), this refers to the global object (window in a browser, global in Node.js and undefined in VS Code)
+
+In an event handler, this refers to the element that the event was fired on: 
+            button.addEventListener('click', function() {
+                console.log(this);  // logs the button element
+              });
+
+In an arrow function, this is lexically bound, which means it refers to the this value of the enclosing scope
+            let obj = {
+              name: 'Alice',
+              greet: () => {
+                console.log('Hello, ' + this.name);
+              }
+            };
+            obj.greet();  // logs "Hello, undefined", because `this` refers to the global object
