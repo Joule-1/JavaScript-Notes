@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+</head>
+<body style="font-family: Inter, sans-serif; ;">
+    <p class="click" id="first" style="cursor: pointer;">click functon</p>
+
+    <ul id="images" style="border: 1px solid black; height: 100vh;"> 
+        <li id="random" style="border: 1px solid black;">random</li>
+        <li id="owl">Owl</li>
+        <li id="norm">norm</li>
+    </ul>
+    <a href="google.com" id="gog">Google</a>
+</body>
+<script>
+    // Observe it carefully everytime you read it (on browser)
+
+    // Event Bubbling occurs when an event is fired on an element and bubbles up to its parent elements
+    // Event Capturing is the opposite of event bubbling. When an event is fired on an element, the event is first captured by the outermost element and propagated to the inner elements.
+
+    //For any event to occur, the true or false of the parent elements matters
+
+    //
+    document.getElementById("images").addEventListener('click', function(e){
+        console.log("parent")
+    }, true) // this true or false will decide the event capturing or bubbling for the child elements
+    //
+
+    document.getElementById("random").addEventListener('click', function(e){
+        console.log(('Hey'))
+    }, false)
+    document.getElementById("owl").addEventListener('click', function(e){
+        console.log(('Mast'))
+        // e.stopPropagation()
+    }, false)
+    document.getElementById('gog').addEventListener('click',function(e){
+        console.log("Google Clicked")
+        e.preventDefault();
+    })
+    // false EventBubbling executed from inside to outside
+    // true EventCapturing executed from outside to inside
+
+    //type |timeStamp |preventDefault |target toElement srcElement |currentTarget |clientX |clientY |screenX |screenY |altKey |ctrlKey |shiftKey |key
+    //type speed test |tagName
+
+
+    //
+</script>
+</html>
