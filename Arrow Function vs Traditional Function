@@ -1,0 +1,27 @@
+this keyword: 
+              In traditional functions, this is determined by how the function is called (its execution context). 
+              In arrow functions, this is lexically bound, meaning it takes the this value of its enclosing execution context.
+
+Arguments object: 
+              Traditional functions have an arguments object, which is an array-like object that contains all the arguments passed to the function. 
+                        In JavaScript, traditional functions have access to a special variable called arguments. 
+                        This is an array-like object that contains all of the arguments that were passed to the function, 
+                        regardless of whether the function explicitly declares parameters to accept these arguments.
+
+              Arrow functions do not have an arguments object. If you need to access arguments in an arrow function, you can use rest parameters.
+                    let arrowFunc = (...args) => {
+                    console.log(args);
+                  };
+                  arrowFunc('Hello', 'World', '!');  // logs: [ 'Hello', 'World', '!' ]
+
+Constructors: 
+              Traditional functions (declared with the function keyword) can be used as constructors (i.e., called with the new keyword to create new objects). 
+              Arrow functions cannot be used as constructors and will throw an error if used with new.
+
+Prototype property: 
+              Traditional functions have a prototype property, which is used in inheritance. 
+              Arrow functions do not have a prototype property.
+
+Method definitions: 
+              If you're defining a method in an object literal, you'll typically want to use a traditional function, because it will have the correct this value. 
+              If you use an arrow function as a method, this will not refer to the object.
